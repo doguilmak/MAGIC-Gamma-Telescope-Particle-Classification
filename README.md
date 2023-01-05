@@ -78,7 +78,7 @@ D. Heck et al., <i>CORSIKA</i>, A Monte Carlo code to <i>simulate extensive air 
 	<li><b>P. Savicky, E. Kotrc. Experimental Study of Leaf Confidences for Random Forest.</b>  <i>Proceedings of COMPSTAT 2004, In: Computational Statistics. (Ed.: Antoch J.) - Heidelberg, Physica Verlag 2004, pp. 1767-1774.</i></li>
 	<br>
 	<li><b>J. Dvorak, P. Savicky. Softening Splits in Decision Trees Using Simulated Annealing.</b>  <i>Proceedings of ICANNGA 2007, Warsaw, (Ed.: Beliczynski et. al), Part I, LNCS 4431, pp. 721-729. </i></li>
-<ul>
+</ul>
 
 <h1>Contact Me</h1>
 
