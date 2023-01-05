@@ -1,83 +1,90 @@
+<h1  align=center><font  size = 6>Classify High Energy Gamma Particles Observed From MAGIC Telescope</font></h1>  
 
-# Predict Gamma (signal) and Hadron (background) from MAGIC Gamma Telescope with XGBoost and ANN
+<p  align="center"><img src="https://www.iac.es/sites/default/files/styles/crop_cinemascope_48_17_to_1920px/public/images/installation/Perfil%20ORM%20V%C3%ADa%20Lactea.jpg?h=ef71438a&itok=VvicsMzE" height=370 width=1000></p>
 
-## Problem Statement
+<small>Picture Source: <a  href="https://www.iac.es/en/observatorios-de-canarias/telescopes-and-experiments/magic-telescopes">Instituto de Astrofísica de Canarias</a></small>  
 
-The purpose of this study is to predict the result of the telescope observation. Algorithm is trying to predict the class (11th row) which is gamma (signal) or hadron (background). 
+<br>  
 
-## Dataset
+<h2>Data Set Information</h2>  
 
-Dataset is downloaded from [archive.ics.uci.edu](https://archive.ics.uci.edu/ml/datasets/MAGIC+Gamma+Telescope) website. You can find the details of the dataset in that website. Dataset has **11 columns** and **19020 rows without the header**.
+<p>The data are <i>MC generated</i> (see below) to simulate registration of high energy gamma particles in a ground-based atmospheric Cherenkov gamma telescope using the imaging technique. Cherenkov gamma telescope observes high energy gamma rays, taking advantage of the radiation emitted by charged particles produced inside the <i>electromagnetic showers</i> initiated by the <i>gammas</i>, and <i>developing</i> in the <i>atmosphere</i>. This <i>Cherenkov radiation (of visible to UV wavelengths)</i> leaks through the <i>atmosphere</i> and gets recorded in the detector, allowing reconstruction of the <i>shower parameters</i>. The available information consists of pulses left by the incoming <i>Cherenkov photons</i> on the <i>photomultiplier tubes</i>, arranged in a plane, the camera. Depending on the energy of the primary <i>gamma</i>, a total of few hundreds to some <i>10000 Cherenkov photons</i> get collected, in <i>patterns (called the shower image)</i>, allowing to discriminate statistically those caused by primary <i>gammas (signal)</i> from the images of hadronic showers initiated by cosmic rays in the <i>upper atmosphere (background)</i>.</p>  
 
-## Methodology
+<p>Typically, the image of a shower after some <i>pre-processing</i> is an <i>elongated cluster</i>. Its long axis is oriented towards the camera center if the <i>shower axis</i> is parallel to the telescope's <i>optical axis</i>, i.e. if the telescope axis is directed towards a point source. A <i>principal component analysis</i> is performed in the camera plane, which results in a correlation <i>axis</i> and defines an <i>ellipse</i>. If the <i>depositions</i> were distributed as a <i>bivariate Gaussian</i>, this would be an <i>equidensity ellipse</i>. The characteristic parameters of this <i>ellipse (often called Hillas parameters)</i> are among the image parameters that can be used for <i>discrimination</i>. <i>The energy depositions</i> are typically <i>asymmetric</i> along the <i>major axis</i>, and this <i>asymmetry</i> can also be used in <i>discrimination</i>. There are, in addition, further discriminating characteristics, like the extent of the cluster in the image plane, or the total sum of depositions. This information has taken from <a  href='https://archive.ics.uci.edu/ml/datasets/MAGIC+Gamma+Telescope'>archive.ics.uci.edu</a> site.</p>
 
-In this project, as stated in the title, results were obtained through **XGBoost** and **artificial neural networks**.  You are free to visit [XGBoost](https://xgboost.ai/) website for learn the XGBoost method better.
+<br>
 
-## Analysis
+<h2>Objectives</h2>
 
- | # | Column | Non-Null Count | Dtype |
-|--|--|--|--|
-| 0 | 0 | 10000 non-null | float64
-| 1 | 1 | 10000 non-null | float64
-| 2 | 2 | 10000 non-null | float64
-| 3 | 3 | 10000 non-null | float64
-| 4 | 4 | 10000 non-null | float64
-| 5 | 5 | 10000 non-null | float64
-| 6 | 6 | 10000 non-null | float64
-| 7 | 7 | 10000 non-null | float64
-| 8 | 8 | 10000 non-null | float64
-| 9 | 9 | 10000 non-null | float64
-| 10 | 10 | 10000 non-null | object
+<ul>
+	<li>Understand the data set & cleanup (if required).</li>
+	<li> Build  <i>artificial neural network</i>  model to predict class of the particles. Classes occurs as primary <i>gammas (signal)</i> from the images of hadronic showers initiated by cosmic rays in the <i>upper atmosphere (background)</i>.</li>
+	<li>Analize the model with <i>accuracy</i>, <i>loss</i> and <i>ROC curve</i> graphs.</li>
+	<li>Build XGBoost model to predict particle class.</li>
+</ul>
 
-**dtypes: float64(10), object(1)**
+<br>
 
-### XGBoost
-***Confusion Matrix(XGBoost):***
+<p>The <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/MAGIC_particle_classification.ipynb'>MAGIC_particle_classification.ipynb</a> file containing the construction of the <i>artificial neural network</i> model. The best result of this model has been added to the repository as <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/best_model.h5'>best_model.h5</a> In addition, a different <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/magic.py'>model</a> was created with the <i>XGBoost</i> technique.
 
-| 3807 | 481 |
-|--|--|
-| **251** | **1700** |
+<br>
 
+<h2>Keywords</h2>
 
-> **Accuracy score(XGBoost): 0.8826735053694502**
-> 
-> **Process took 0.8865966796875 seconds.**
+<ul>
+	<li>Neural Networks</li>
+	<li>Space</li>
+	<li>Telescope</li>
+	<li>Classification</li>
+	<li>High Energy Gamma Particles</li>
+	<li>Deep Learning</li>
+</ul>
 
-### Artificial Neural Network
+<br>
 
-| Layer (type) | Output Shape | Param # |
-|--|--|--|
-| dense_14 (Dense) | (None, 16) | 176 |
-| dense_15 (Dense) | (None, 32) | 544 |
-| dense_16 (Dense) | (None, 16) | 528 |
-| dense_17 (Dense) | (None, 1) | 17 |
+<p>The data set was generated by a <i>Monte Carlo program, Corsika</i>, described in:
+D. Heck et al., <i>CORSIKA</i>, A Monte Carlo code to <i>simulate extensive air showers</i>, <i><a  href='http://rexa.info/paper?id=ac6e674e9af20979b23d3ed4521f1570765e8d68'>Forschungszentrum Karlsruhe FZKA 6019 (1998)</a></i>. The program was run with parameters allowing to observe events with energies down to below <i>50 GeV</i>.</p>
 
-Total params: 1,265
-Trainable params: 1,265
-Non-trainable params: 0
+<br>  
 
-In ***Plot*** folder, you can find ***model_val_accuracy.png***  which is showing plot of test and train accuracy with val_accuracy. Accuracy values and also plot can change a bit after you run the algorithm.
+<h2>Source</h2>  
 
-Model predicted class as [[0]].
+<h3>Original Owner:</h3> 
 
-> **Process took 1.8856332302093506 seconds.**
+<ul>
+	<li>R. K. Bock</li>
+	<li>Major Atmospheric Gamma Imaging Cherenkov Telescope project (MAGIC)</li>
+	<li>http://wwwmagic.mppmu.mpg.de</li>
+	<li>rkb '@' mail.cern.ch</li>
+</ul> 
 
-## How to Run Code
+<h3>Donor</h3>  
 
-Before running the code make sure that you have these libraries:
+<ul>
+	<li>P. Savicky</li>
+	<li>Institute of Computer Science, AS of CR</li>
+	<li>Czech Republic</li>
+	<li>savicky '@' cs.cas.cz</li>
+</ul>
 
- - pandas 
- - time
- - sklearn
- - numpy
- - warnings
- - xgboost
- - keras
-    
-## Contact Me
+<br>
 
-If you have something to say to me please contact me: 
+<h2>Relevant Papers</h2> 
 
- - Twitter: [Doguilmak](https://twitter.com/Doguilmak).  
- - Mail address: doguilmak@gmail.com
+<ul>
+	<li><b>Bock, R.K., Chilingarian, A., Gaug, M., Hakl, F., Hengstebeck, T., Jirina, M., Klaschka, J., Kotrc, E., Savicky, P., Towers, S., Vaicilius, A., Wittek W. (2004).</b>  <i>Methods for multidimensional event classification: a case study using images from a Cherenkov gamma-ray telescope. Nucl.Instr.Meth. A, 516, pp. 511-528.</i></li>
+	<br>
+	<li><b>P. Savicky, E. Kotrc. Experimental Study of Leaf Confidences for Random Forest.</b>  <i>Proceedings of COMPSTAT 2004, In: Computational Statistics. (Ed.: Antoch J.) - Heidelberg, Physica Verlag 2004, pp. 1767-1774.</i></li>
+	<br>
+	<li><b>J. Dvorak, P. Savicky. Softening Splits in Decision Trees Using Simulated Annealing.</b>  <i>Proceedings of ICANNGA 2007, Warsaw, (Ed.: Beliczynski et. al), Part I, LNCS 4431, pp. 721-729. </i></li>
+<ul>
+
+<h1>Contact Me</h1>
+
+<p>If you have something to say to me please contact me:</p>
+
+<ul>
+	<li>Twitter: <a  href="https://twitter.com/Doguilmak">Doguilmak</a></li>
+	<li>Mail address: doguilmak@gmail.com</li>
+</ul>
  
