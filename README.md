@@ -25,7 +25,7 @@
 
 <br>
 
-<p>The <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/MAGIC_particle_classification.ipynb'>MAGIC_particle_classification.ipynb</a> file containing the construction of the <i>artificial neural network</i> model. The best result of this model has been added to the repository as <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/best_model.h5'>best_model.h5</a> In addition, a different <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/magic.py'>model</a> was created with the <i>XGBoost</i> technique.
+<p>The <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/MAGIC_particle_classification.ipynb'>MAGIC_particle_classification.ipynb</a> file containing the construction of the <i>artificial neural network</i> model. The best result of this model has been added to the repository as <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/best_model.h5'>best_model.h5</a> In addition, a different <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/files_as_py/magic_xgboost.py'>model</a> was created with the <i>XGBoost</i> technique.
 
 <br>
 <br>
