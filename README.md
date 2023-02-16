@@ -1,10 +1,23 @@
-<h1  align=center><font  size = 6>Classify High Energy Gamma Particles Observed From MAGIC Telescope</font></h1>  
+<h1  align=center><font size = 6>Classify High Energy Gamma Particles Observed From MAGIC Telescope</font></h1>  
 
 <p  align="center"><img src="https://www.iac.es/sites/default/files/styles/crop_cinemascope_48_17_to_1920px/public/images/installation/Perfil%20ORM%20V%C3%ADa%20Lactea.jpg?h=ef71438a&itok=VvicsMzE" height=370 width=1000></p>
 
 <small>Picture Source: <a  href="https://www.iac.es/en/observatorios-de-canarias/telescopes-and-experiments/magic-telescopes">Instituto de Astrofísica de Canarias</a></small>  
 
-<br>  
+<br>
+
+<h2>Keywords</h2>
+
+<ul>
+	<li>Neural Networks</li>
+	<li>Space</li>
+	<li>Telescope</li>
+	<li>Classification</li>
+	<li>High Energy Gamma Particles</li>
+	<li>Deep Learning</li>
+</ul>
+
+<br>
 
 <h2>Data Set Information</h2>  
 
@@ -20,26 +33,12 @@
 	<li>Understand the data set & cleanup (if required).</li>
 	<li> Build  <i>artificial neural network</i>  model to predict class of the particles. Classes occurs as primary <i>gammas (signal)</i> from the images of hadronic showers initiated by cosmic rays in the <i>upper atmosphere (background)</i>.</li>
 	<li>Analize the model with <i>accuracy</i>, <i>loss</i> and <i>ROC curve</i> graphs.</li>
-	<li>Build XGBoost model to predict particle class.</li>
+	<li>Build <i>XGBoost</i> model to predict particle class.</li>
 </ul>
 
 <br>
 
 <p>The <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/MAGIC_particle_classification.ipynb'>MAGIC_particle_classification.ipynb</a> file containing the construction of the <i>artificial neural network</i> model. The best result of this model has been added to the repository as <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/best_model.h5'>best_model.h5</a> In addition, a different <a href='https://github.com/doguilmak/MAGIC-Gamma-Telescope-XGBoost/blob/main/files_as_py/magic_xgboost.py'>model</a> was created with the <i>XGBoost</i> technique.
-
-<br>
-<br>
-
-<h2>Keywords</h2>
-
-<ul>
-	<li>Neural Networks</li>
-	<li>Space</li>
-	<li>Telescope</li>
-	<li>Classification</li>
-	<li>High Energy Gamma Particles</li>
-	<li>Deep Learning</li>
-</ul>
 
 <br>
 
@@ -80,12 +79,11 @@ D. Heck et al., <i>CORSIKA</i>, A Monte Carlo code to <i>simulate extensive air 
 	<li><b>J. Dvorak, P. Savicky. Softening Splits in Decision Trees Using Simulated Annealing.</b>  <i>Proceedings of ICANNGA 2007, Warsaw, (Ed.: Beliczynski et. al), Part I, LNCS 4431, pp. 721-729. </i></li>
 </ul>
 
-<h1>Contact Me</h1>
+<h2>Contact Me</h2>
 
 <p>If you have something to say to me please contact me:</p>
 
 <ul>
-	<li>Twitter: <a  href="https://twitter.com/Doguilmak">Doguilmak</a></li>
+	<li>Twitter: <a href="https://twitter.com/Doguilmak">Doguilmak</a></li>
 	<li>Mail address: doguilmak@gmail.com</li>
 </ul>
- 
